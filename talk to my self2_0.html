@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="stylesheet2_0.css" />
+	<script src="js/jquery-1.10.1.min.js"></script>
+</head>
+    <body>
+<script type="text/javascript">
+
+// var objDiv = ("chat-window").getElementById("#chat-window");
+// objDiv.scrollTop = objDiv.scrollHeight;
+
+var dialouge=["Hello!", "Good day!", "My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more", "I am stephen, but you can call me Steve. How are you doing today?", "Today I am fealing fine. What about you?", "I feel great! I went to see a hockey game yesterday", "who, played?", "Toronto and Ottawa.", "which team did you cheer for?", "Maple Leafs.", "who won?", "We did! and the score was: 3 to 2"]
+var d=0
+alert("Hello World!");
+function scenario(scen){
+	alert("i sence a disturbance in the force")
+	if (scen==2){
+	window.dialouge=["2Hello!", "Good day!", "My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more", "I am stephen, but you can call me Steve. How are you doing today?", "Today I am fealing fine. What about you?", "I feel great! I went to see a hockey game yesterday", "who, played?", "Toronto and Ottawa.", "which team did you cheer for?", "Maple Leafs.", "who won?", "We did! and the score was: 3 to 2"]}
+	else if(scen==3){
+		alert("scenario 3 is running")
+	window.dialouge=["3Hello!", "Good day!", "My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more", "I am stephen, but you can call me Steve. How are you doing today?", "Today I am fealing fine. What about you?", "I feel great! I went to see a hockey game yesterday", "who, played?", "Toronto and Ottawa.", "which team did you cheer for?", "Maple Leafs."]}
+	else if(scen==4){
+	window.dialouge=["4Hello!", "Good day!", "My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more", "I am stephen, but you can call me Steve. How are you doing today?", "Today I am fealing fine. What about you?", "I feel great! I went to see a hockey game yesterday", "who, played?", "Toronto and Ottawa.", "which team did you cheer for?", "Maple Leafs.", "who won?", "We did! and the score was: 3 to 2"]}
+	else{
+	window.dialouge=["1Hello!", "Good day!", "My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more", "I am stephen, but you can call me Steve. How are you doing today?", "Today I am fealing fine. What about you?", "I feel great! I went to see a hockey game yesterday", "who, played?", "Toronto and Ottawa.", "which team did you cheer for?", "Maple Leafs.", "who won?", "We did! and the score was: 3 to 2"]}
+	alert(scen)
+	window.d=0	
+	$("#chat-window span, .divide, .person2, .person1 ").replaceAll("<span class='p1'>" +dialouge[d] + "</span>");
+
+	return('dialouge', 'd')
+}
+
+
+
+function talk()
+{ 
+	// alert("Hello World!");
+	if(d % 2==0) {
+		var n=1
+		var i="<img class='person1' src='pictures/person1.png' />"
+		var j=""
+	}
+	else {
+		var n=2 
+		var i=""
+		var j="<img class='person2' src='pictures/person2.png' />"
+	}
+
+		$("#chat-window ").append( "<span class='p" + n + "'>" + i + dialouge[d++] + j + "</span> <hr class='divide' size=1 width= 90% ><br class='divide'>");
+		$("#chat-window").scrollTop($("#chat-window")[0].scrollHeight);
+
+
+   		// d = d % dialogue.length;
+    	if(d==dialouge.length+1)
+    	{
+		    d=0;
+		    $("#chat-window span, .divide, .person2, .person1 ").replaceAll("<span class='p1'>" +dialouge[d] + "</span>");
+	    }
+}
+
+setInterval('talk();', 1000)
+
+// var hello=["H", "He", "Hel", "Hell", "Hello", " "];
+var patxa="Hello!";
+var pbtxa="Good day!";
+var patxb="My name is Ryan, what is your name? and I was also woundering if this text would wrap over nicely. to check this i will now randomly type characters to fill in the blank space that needs to be filled inorder to test out this very important premisis. I hope this is enough text to validate the text wrapping procedure. if not i will have to type more";
+var pbtxb="I am stephen, but you can call me Steve. How are you doing today?";
+var patxc="Today I am fealing fine. What about you?";
+var pbtxc="I feel great! I went to see a hockey game yesterday";
+var patxd="who, played?";
+var pbtxd="Toronto and Ottawa.";
+var patxe="which team did you cheer for?";
+var pbtxe="Maple Leafs.";
+var patxf="who won?";
+var pbtxf="We did! and the score was: 3 to 2";
+var q=0;
+var n=[patxa, pbtxa, patxb, pbtxb, patxc, pbtxc, patxd, pbtxd, patxe, pbtxe, patxf, pbtxf];
+var l=0;
+var txt=n[l];
+// alert(txt.slice(q, 10));
+// alert( "this is q:" + q)
+// alert("I am ready to play".slice(0, 6))
+function type()
+{	
+	// alert( q )
+	// $(".blinking ").replaceWith( "<span class='blinking' >" + txt.slice(0, d2++) + "</span>");
+		$(".blinking").replaceWith( "<span class='blinking' >" +  txt.slice(0, q++)  + "</span> "); 
+		// alert("break 2" + q)
+		if (q==n[l].length+1)
+		{
+			l++
+		    window.txt= n[l]
+		    q=0
+		    // alert(txt.length)
+		}
+		if(l==n.length)
+		{
+			window.l=0
+			window.txt=n[l]
+			// alert("this is l: " + l)
+		}
+		// alert(l)
+		return(txt=n[l])
+
+}
+setInterval('type();', 1000/(txt.length+1))
+// alert(txt.length)
+
+
+
+</script>
+
+
+
+<!--  
+// <script type="text/javascript">
+// $(function() {
+//     var x;
+//         setInterval(function() {
+//                 if(x == 0) {
+//                     $('.blinking').removeAttr('style');
+//                     x = 1;
+//                 } else  {
+//                     if(x = 1) {
+//                         $('.blinking').css('color', 'white');
+//                         x = 0;
+//                     }
+//                 }
+//         }, 500);
+// });
+// </script>
+-->
+
+
+
+
+<p>"version 2.o"</p>
+<div id="chat-bar">
+<!-- 	<div id="scenario">
+        <span id='version'> scenario: version1.7</span>
+	<img id='arrow' src='pictures\arrow down2.png' />   
+	</div> -->
+<div id='cssmenu'>
+<ul>
+   <li class='has-sub last'><a href='#'><span>Scenario1: version 2.o</span></a>
+      <ul>
+         <li onclick="scenario(1)"><a href='#'><span>Scenario1</span></a></li>
+         <li onclick="scenario(2)"><a href='#'><span>Scenario2</span></a></li>
+         <li onclick="scenario(3)"><a href='#'><span>Scenario3</span></a></li>
+         <li onclick="scenario(4)" class='last'><a href='#'><span>That other Scenario that no one really like to talk about</span></a></li>
+      </ul>
+   </li>
+</ul>
+</div>
+
+
+
+
+
+	<img id='exit' src='pictures\exit.png' />
+	<img id='settings' src='pictures\settings2.png' />
+	<img id='help' src='pictures\help.png' />
+<!-- 	<p id='version'>version: 1.5</p> -->
+
+	<div id='space1'>
+	</div>
+	<hr size=1 width=95%>
+</div>
+<div id="chat-window">
+	<div id="bubblebox">
+		<div class="bubble">I am a Shape-shifter, and I change my height based on the text I have!
+		</div>
+	</div>
+
+</div>
+<div id="chat-window2">
+	<div class='textbar'><span class="blinking"> </span>
+	</div>
+	<div class='send'>send
+	</div>
+</div>
+<!-- <div id="chat-window2"></div> -->
+<br>t<br>h<br>i<br>s<br><br>i<br>s<br><br>s<br>o<br><br>y<br>o<br>u<br><br>c<br>a<br>n<br><br>s<br>e<br>e<br><br>i<br>t<br><br>s<br>c<br>r<br>o<br>l<br>l
+</body>
+</html>
